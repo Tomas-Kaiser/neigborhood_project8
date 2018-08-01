@@ -6,22 +6,19 @@ class MapContainer extends Component {
     return (
       <Map
         zoom={this.props.zoom}
-        center={this.props.center}
-        showInfo={this.props.showInfo}
-        closeInfo={this.props.closeInfo}
-        infoWindow={this.props.infoWindow}
-        content={this.props.content}
+        inatialCenter={this.props.inatialCenter}
+        places={this.props.places}
         googleMapURL={
-          'https://maps.googleapis.com/maps/api/js?key=AIzaSyCmjYJxeyTbnrm0SFEGJea05tIc9LdHkS0'
+          'https://maps.googleapis.com/maps/api/js?key=AIzaSyAuj6bXV7GuDq9oGXfVGRDxS_6nLBSNkvo'
         }
         loadingElement={<div style={{ height: '100%' }} />}
         containerElement={
           <div
-            className="Map-section"
+            className=""
             role="application"
             tabIndex={0}
             style={{
-              height: `${this.props.mapHeight}`,
+              height: `100vh`,
               width: `${window.innerWidth}px`,
             }}
           />
