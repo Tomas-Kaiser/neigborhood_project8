@@ -9,7 +9,7 @@ const places = [
    }, 
    // Mohery
    {
-      name: 'Clifs of Moher',
+      name: 'Cliffs of Moher',
       id: 'IE02',
       position: {lat: 52.971880, lng: -9.426510},
       visible: true,
@@ -26,7 +26,7 @@ const places = [
    // Giant Causes
    {
       name: 'Giant Cause',
-      id: 'IE02',
+      id: 'NI02',
       position: {lat: 55.240807, lng: -6.511555},
       visible: true,
       wiki: ''
@@ -34,9 +34,11 @@ const places = [
    // LighHouse
    {
       name: 'Hook Head - Lighthouse',
-      id: 'IE02',
+      id: 'IE03',
       position: {lat: 52.123864, lng: -6.929503},
       visible: true,
       wiki: ''
    } 
 ];
+
+export default places;

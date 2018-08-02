@@ -1,5 +1,6 @@
 import React from 'react';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
+import PlaceMarker from './PlaceMarker';
 
 const Map = withScriptjs(withGoogleMap(props => {
    const inatialCenter = props.inatialCenter;
@@ -9,8 +10,10 @@ const Map = withScriptjs(withGoogleMap(props => {
          key={place.id}
          visible={place.visible}
          place={place}
+         infoWindow={props.infoWindow}
+         showInfoWindow={props.showInfoWindow}
       />
-   ))
+   ));
 
    return (
       <GoogleMap zoom={zoom} center={inatialCenter}>
