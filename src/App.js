@@ -22,6 +22,17 @@ class App extends Component {
     this.setState({infoWindow: ''});
   }
 
+  filterMarkers = showingPlaces => {
+    let updatedPlaces = JSON.parse(JSON.stringify(this.state.places));
+    updatedPlaces.forEach(place => {
+      if (showingPlaces.find(pl => pl.id === place.id))
+        place['visible'] = true;
+      else
+        place['visible'] = false;
+    });
+    this.setState({ places: updatedPlaces })
+  }
+
   render() {
     return (
       <div className="App">
@@ -35,6 +46,8 @@ class App extends Component {
         />
         <Sidebar 
           places={this.state.places}
+          filterMarkers={this.filterMarkers}
+          showInfoWindow={this.showInfoWindow}
         />
 
       </div>

@@ -17,7 +17,8 @@ class Sidebar extends Component {
             placeNorm.indexOf(queryNorm) !== -1 && placeNorm.startsWith(queryNorm)
          );
       });
-      this.setState({ showingPlaces })
+      this.setState({ showingPlaces });
+      this.props.filterMarkers(showingPlaces);
    }
 
    render() {
@@ -34,6 +35,7 @@ class Sidebar extends Component {
                   {this.state.showingPlaces.map(place => (
                     <li
                      key={place.id}
+                     onClick={() => this.props.showInfoWindow(place)}
                     >{place.name}</li> 
                   ))}
                </ol>
