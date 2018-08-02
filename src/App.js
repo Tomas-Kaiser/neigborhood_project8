@@ -15,7 +15,11 @@ class App extends Component {
   }
 
   showInfoWindow = place => {
-    this.setState({infoWindow: place.id})
+    this.setState({infoWindow: place.id});
+  }
+
+  closeInfowWindow = () => {
+    this.setState({infoWindow: ''});
   }
 
   render() {
@@ -27,8 +31,11 @@ class App extends Component {
           places={this.state.places}
           infoWindow={this.state.infoWindow}
           showInfoWindow={this.showInfoWindow}
+          closeInfowWindow={this.closeInfowWindow}
         />
-        <Sidebar />
+        <Sidebar 
+          places={this.state.places}
+        />
 
       </div>
     );
