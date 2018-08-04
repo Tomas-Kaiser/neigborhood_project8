@@ -17,6 +17,7 @@ class PlaceMarker extends Component {
           onCloseClick={this.props.closeInfowWindow}
         >
           <h1>{this.props.place.name}</h1>
+
         </InfoWindow>
       )}
     </Marker>

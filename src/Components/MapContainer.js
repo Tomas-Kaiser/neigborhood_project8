@@ -11,6 +11,7 @@ class MapContainer extends Component {
         infoWindow={this.props.infoWindow}
         showInfoWindow={this.props.showInfoWindow}
         closeInfowWindow={this.props.closeInfowWindow}
+        imgs={this.props.imgs}
         googleMapURL={
           'https://maps.googleapis.com/maps/api/js?key=AIzaSyAuj6bXV7GuDq9oGXfVGRDxS_6nLBSNkvo'
         }
