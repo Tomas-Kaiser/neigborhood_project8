@@ -68,7 +68,7 @@ class App extends Component {
         })
           .catch(err => {console.log('Error happened during fetching', err);
         });
-  }*/
+  } */
 
   render() {
     return (
