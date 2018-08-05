@@ -1,7 +1,7 @@
 const places = [
    // Galway
    {
-      name: 'Galway',
+      name: 'Galway city',
       id: 'IE01',
       position: {lat: 53.270668, lng: -9.056791},
       visible: true,
@@ -33,7 +33,7 @@ const places = [
    }, 
    // LighHouse
    {
-      name: 'Hook Head - Lighthouse',
+      name: 'Lighthouse',
       id: 'IE03',
       position: {lat: 52.123864, lng: -6.929503},
       visible: true,

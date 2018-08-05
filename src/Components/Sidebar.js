@@ -31,14 +31,14 @@ class Sidebar extends Component {
                   input={this.state.query}
                   onChange={(event) => this.updateQuery(event.target.value)}
                />
-               <ol>
+               <ul>
                   {this.state.showingPlaces.map(place => (
                     <li
                      key={place.id}
                      onClick={() => this.props.showInfoWindow(place)}
                     >{place.name}</li> 
                   ))}
-               </ol>
+               </ul>
             </section>
       )
    }

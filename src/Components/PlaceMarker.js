@@ -16,7 +16,10 @@ class PlaceMarker extends Component {
           key={this.props.place.id}
           onCloseClick={this.props.closeInfowWindow}
         >
-          <h1>{this.props.place.name}</h1>
+         <div>
+            <h1>{this.props.place.name}</h1>
+            <img src={this.props.imgs.small} />
+          </div>
 
         </InfoWindow>
       )}

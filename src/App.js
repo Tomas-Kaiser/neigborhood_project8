@@ -12,13 +12,21 @@ class App extends Component {
     zoom: 6, // Default zoom
     inatialCenter: {lat: 53.530873, lng: -8.329037}, // Default place - middle of Ireland
     infoWindow: '', // Active infoWindow
-    imgs: []  // Photos from unsplash
+    imgs: [],  // Photos from unsplash
+    imgsUser: [],
+    selectedImg: ''
     
   }
   
 
   showInfoWindow = place => {
-    this.setState({infoWindow: place.id});
+    this.setState({
+      infoWindow: place.id,
+      selectedImg: place.name
+    });
+    if(this.state.selectedImg.hasOwnProperty){
+      this.fetchData();
+    }
   }
 
   closeInfowWindow = () => {
@@ -36,28 +44,25 @@ class App extends Component {
     this.setState({ places: updatedPlaces })
   }
 
-    componentDidMount = () => {
-      this.fetchData();
-      
-    }
+ 
 
     fetchData = () => {
-      const searchedForText = 'Cliffs of Moher';
+      const searchedForText = this.state.selectedImg;
       const unsplashKey = '461e85d44d4c08f58f37c36959d0207a4753c976252ab45d4c6bcac355d473cf';
 
       fetch(`https://api.unsplash.com/search/photos?page=1&query=${searchedForText}`, {
         headers: {Authorization: 'Client-ID ' + unsplashKey}
       }).then(res => res.json())
       .then(this.addImage)
-      .catch(err => {console.log('Error happened during fetching', err)})
-
-      
+      .catch(err => {console.log('Error happened during fetching', err)})      
     }
 
     addImage = (data) => {
-      this.setState({imgs: data});
-      console.log('Success!');
-      
+      this.setState({
+          imgs: data.results[0].urls,
+          imgsUser: data.results[0].user
+        });
+      console.log('Success!');    
     }
 
  /* componentDidMount = () => {
@@ -87,8 +92,6 @@ class App extends Component {
           filterMarkers={this.filterMarkers}
           showInfoWindow={this.showInfoWindow}
         />
-
-
       </div>
     );
   }
