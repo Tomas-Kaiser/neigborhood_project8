@@ -28,10 +28,6 @@ class App extends Component {
       infoWindow: place.id,
       selectedImg: place.name
     });
-   
-
-   /*if (!this.state.selectedImg.hasOwnProperty)
-    this.fetchData(); */
   }
   // Closing infowindow func
   closeInfowWindow = () => {
