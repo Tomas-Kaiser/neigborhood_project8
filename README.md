@@ -12,6 +12,8 @@ Images on each location is provided by [Unsplash](https://unsplash.com/developer
 ## Getting started
 In the project directory, you can run:
 
+Clone the current repository
+
 `npm install`
 
 `npm start`
