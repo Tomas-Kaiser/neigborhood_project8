@@ -6,7 +6,7 @@ class PlaceMarker extends Component {
     let showInfo = this.props.visible && this.props.infoWindow === this.props.place.id
 
   return (
-    <Marker
+    <Marker defaultAnimation={2}
       position={this.props.place.position}
       visible={this.props.place.visible}
       onClick={() => this.props.showInfoWindow(this.props.place)}
@@ -18,7 +18,8 @@ class PlaceMarker extends Component {
         >
          <React.Fragment>
             <h1>{this.props.place.name}</h1>
-            <img src={this.props.imgs.small} />
+            <img src={this.props.img.small} />
+            <p>Photo by {this.props.imgsUser.name}</p>
           </React.Fragment>
 
         </InfoWindow>

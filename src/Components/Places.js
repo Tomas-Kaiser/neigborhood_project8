@@ -13,7 +13,6 @@ const places = [
       id: 'IE02',
       position: {lat: 52.971880, lng: -9.426510},
       visible: true,
-      wiki: ''
    }, 
    // Rope Bridge
    {
@@ -21,15 +20,13 @@ const places = [
       id: 'NI01',
       position: {lat: 55.239426, lng: -6.332551},
       visible: true,
-      wiki: ''
    }, 
    // Giant Causes
    {
-      name: 'Giant Cause',
+      name: 'Dunseverick Castle',
       id: 'NI02',
-      position: {lat: 55.240807, lng: -6.511555},
+      position: {lat: 55.238362, lng: -6.448199},
       visible: true,
-      wiki: ''
    }, 
    // LighHouse
    {
@@ -37,7 +34,6 @@ const places = [
       id: 'IE03',
       position: {lat: 52.123864, lng: -6.929503},
       visible: true,
-      wiki: ''
    } 
 ];
 

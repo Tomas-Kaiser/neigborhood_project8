@@ -3,6 +3,7 @@ import './App.css';
 import MapContainer from './Components/MapContainer';
 import Sidebar from './Components/Sidebar';
 import places from './Components/places.js';
+import { slide as Menu } from 'react-burger-menu'
 
 
 
@@ -18,19 +19,22 @@ class App extends Component {
     
   }
   
-
-  showInfoWindow = place => {
+  showInfoWindow = (place) => {
     this.setState({
       infoWindow: place.id,
       selectedImg: place.name
     });
-    if(this.state.selectedImg.hasOwnProperty){
-      this.fetchData();
-    }
+   
+
+    if (!this.state.selectedImg.hasOwnProperty)
+    this.fetchData();
   }
 
   closeInfowWindow = () => {
-    this.setState({infoWindow: ''});
+    this.setState({
+      infoWindow: '',
+      selectedImg: ''
+    });
   }
 
   filterMarkers = showingPlaces => {
@@ -44,7 +48,9 @@ class App extends Component {
     this.setState({ places: updatedPlaces })
   }
 
- 
+  componentDidUpdate = () => {
+    this.fetchData()
+  }
 
     fetchData = () => {
       const searchedForText = this.state.selectedImg;
@@ -76,8 +82,16 @@ class App extends Component {
   } */
 
   render() {
+    let style={
+      bmCrossButton: {
+        height: '24px',
+        width: '24px',
+        right: '40px',
+        padding: '10px'
+      }
+    }
     return (
-      <div className="App"> 
+      <div className="App">
         <MapContainer 
           zoom={this.state.zoom}
           inatialCenter={this.state.inatialCenter}
@@ -86,12 +100,18 @@ class App extends Component {
           showInfoWindow={this.showInfoWindow}
           closeInfowWindow={this.closeInfowWindow}
           imgs={this.state.imgs}
+          imgsUser={this.state.imgsUser}
         />
-        <Sidebar 
-          places={this.state.places}
-          filterMarkers={this.filterMarkers}
-          showInfoWindow={this.showInfoWindow}
-        />
+        <Menu
+          styles={style}
+        >
+          <Sidebar 
+            places={this.state.places}
+            filterMarkers={this.filterMarkers}
+            showInfoWindow={this.showInfoWindow}
+          />
+        </Menu>
+
       </div>
     );
   }

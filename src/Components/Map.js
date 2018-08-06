@@ -13,7 +13,8 @@ const Map = withScriptjs(withGoogleMap(props => {
          infoWindow={props.infoWindow}
          showInfoWindow={props.showInfoWindow}
          closeInfowWindow={props.closeInfowWindow}
-         imgs={props.imgs}
+         img={props.imgs}
+         imgsUser={props.imgsUser}
       />
    ));
 

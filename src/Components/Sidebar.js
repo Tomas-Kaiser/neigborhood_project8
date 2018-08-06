@@ -27,7 +27,7 @@ class Sidebar extends Component {
                <h2>This is sidebar!</h2>
                <input 
                   type='text' role='search'
-                  placeholder='Find an amazin place!'
+                  placeholder='Find an amazing place!'
                   input={this.state.query}
                   onChange={(event) => this.updateQuery(event.target.value)}
                />
