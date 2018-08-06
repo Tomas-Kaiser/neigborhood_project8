@@ -1,8 +1,6 @@
 ## Neigborhood map / project 8 by udacity
 This project is part of the Front-End Web Developer Nanodegree Program by Udacity. It is a single page map application made with React and the Google Maps API.
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
 The map and its components were rendered using [react-google-maps](https://tomchentw.github.io/react-google-maps/).
