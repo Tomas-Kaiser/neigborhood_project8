@@ -15,6 +15,7 @@ const Map = withScriptjs(withGoogleMap(props => {
          closeInfowWindow={props.closeInfowWindow}
          img={props.imgs}
          imgsUser={props.imgsUser}
+         imgsUserLink={props.imgsUserLink}
       />
    ));
 

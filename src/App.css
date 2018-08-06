@@ -32,6 +32,33 @@
 /*
  *
  *
+ INFO WINDOW
+ *
+ *
+ */
+
+ .images {
+   height: 35vh;
+   border-radius: 5px;
+ }
+
+ .gm-style .gm-style-iw {
+   text-align: center;
+ }
+
+ figcaption {
+   text-align: left;
+ }
+
+ a {
+   text-decoration: none;
+   font-weight: bold;
+   color: black;
+ }
+
+/*
+ *
+ *
  HAMBURGER MENU
  *
  *

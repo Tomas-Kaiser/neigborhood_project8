@@ -18,8 +18,8 @@ class PlaceMarker extends Component {
         >
          <React.Fragment>
             <h1>{this.props.place.name}</h1>
-            <img src={this.props.img.small} />
-            <p>Photo by {this.props.imgsUser.name}</p>
+            <img className='images' src={this.props.img.small} />
+            <figcaption>Photo by <a href={this.props.imgsUserLink} target='_blank'>{this.props.imgsUser.name}</a> / <a href='https://unsplash.com/'>Unsplash</a></figcaption>
           </React.Fragment>
 
         </InfoWindow>

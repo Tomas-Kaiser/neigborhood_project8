@@ -15,6 +15,7 @@ class App extends Component {
     infoWindow: '', // Active infoWindow
     imgs: [],  // Photos from unsplash
     imgsUser: [],
+    imgsUserLink: [],
     selectedImg: ''
     
   }
@@ -66,7 +67,8 @@ class App extends Component {
     addImage = (data) => {
       this.setState({
           imgs: data.results[0].urls,
-          imgsUser: data.results[0].user
+          imgsUser: data.results[0].user,
+          imgsUserLink: data.results[0].user.links.html
         });
       console.log('Success!');    
     }
@@ -101,6 +103,7 @@ class App extends Component {
           closeInfowWindow={this.closeInfowWindow}
           imgs={this.state.imgs}
           imgsUser={this.state.imgsUser}
+          imgsUserLink={this.state.imgsUserLink}
         />
         <Menu
           styles={style}
