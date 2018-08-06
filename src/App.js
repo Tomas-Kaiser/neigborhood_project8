@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import MapContainer from './Components/MapContainer';
 import Sidebar from './Components/Sidebar';
-import places from './Components/places.js';
+import places from './places.js';
 import { slide as Menu } from 'react-burger-menu'
 
 
