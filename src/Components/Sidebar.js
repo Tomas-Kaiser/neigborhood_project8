@@ -24,16 +24,17 @@ class Sidebar extends Component {
    render() {
       return (
             <section>
-               <h2>This is sidebar!</h2>
                <input 
+                  className='search'
                   type='text' role='search'
                   placeholder='Find an amazing place!'
                   input={this.state.query}
                   onChange={(event) => this.updateQuery(event.target.value)}
                />
-               <ul>
+               <ul className='list'>
                   {this.state.showingPlaces.map(place => (
                     <li
+                     className='list-item'
                      key={place.id}
                      onClick={() => this.props.showInfoWindow(place)}
                     >{place.name}</li> 
