@@ -16,10 +16,13 @@ class App extends Component {
     imgs: [],  // Photos from unsplash
     imgsUser: [],
     imgsUserLink: [],
-    selectedImg: ''
+    selectedImg: '',
+    hasError: false,
+    errorFetch: ''
     
   }
   
+  // Showing infowindow func
   showInfoWindow = (place) => {
     this.setState({
       infoWindow: place.id,
@@ -30,7 +33,7 @@ class App extends Component {
     if (!this.state.selectedImg.hasOwnProperty)
     this.fetchData();
   }
-
+  // Closing infowindow func
   closeInfowWindow = () => {
     this.setState({
       infoWindow: '',
@@ -38,6 +41,7 @@ class App extends Component {
     });
   }
 
+  // Filtering markers according to input / search
   filterMarkers = showingPlaces => {
     let updatedPlaces = JSON.parse(JSON.stringify(this.state.places));
     updatedPlaces.forEach(place => {
@@ -49,6 +53,7 @@ class App extends Component {
     this.setState({ places: updatedPlaces })
   }
 
+  // Fethich data from Unsplas API
   componentDidUpdate = () => {
     this.fetchData()
   }
@@ -61,7 +66,8 @@ class App extends Component {
         headers: {Authorization: 'Client-ID ' + unsplashKey}
       }).then(res => res.json())
       .then(this.addImage)
-      .catch(err => {console.log('Error happened during fetching', err)})      
+      .catch(err => {console.log('Error happened during fetching', err)
+      })      
     }
 
     addImage = (data) => {
@@ -70,18 +76,13 @@ class App extends Component {
           imgsUser: data.results[0].user,
           imgsUserLink: data.results[0].user.links.html
         });
-      console.log('Success!');    
+      //console.log('Success!');    
     }
 
- /* componentDidMount = () => {
-    const unsplashKey = '461e85d44d4c08f58f37c36959d0207a4753c976252ab45d4c6bcac355d473cf';
-    fetch('https://api.unsplash.com/photos/?client_id=' + unsplashKey)
-          .then(res => res.json())
-          .then(data => {this.setState({ imgs: data });
-        })
-          .catch(err => {console.log('Error happened during fetching', err);
-        });
-  } */
+    // If an error
+    componentDidCatch(error) {
+      this.setState({ hasError: true });
+    }
 
   render() {
     let style={
@@ -94,17 +95,24 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <MapContainer 
-          zoom={this.state.zoom}
-          inatialCenter={this.state.inatialCenter}
-          places={this.state.places}
-          infoWindow={this.state.infoWindow}
-          showInfoWindow={this.showInfoWindow}
-          closeInfowWindow={this.closeInfowWindow}
-          imgs={this.state.imgs}
-          imgsUser={this.state.imgsUser}
-          imgsUserLink={this.state.imgsUserLink}
-        />
+        {!this.state.hasError && (
+         <MapContainer 
+            zoom={this.state.zoom}
+            inatialCenter={this.state.inatialCenter}
+            places={this.state.places}
+            infoWindow={this.state.infoWindow}
+            showInfoWindow={this.showInfoWindow}
+            closeInfowWindow={this.closeInfowWindow}
+            imgs={this.state.imgs}
+            imgsUser={this.state.imgsUser}
+            imgsUserLink={this.state.imgsUserLink}
+            errorFetch={this.state.errorFetch}
+          />
+        )}
+        {this.state.hasError && (
+          <h2>Ops, something went wrong!</h2>
+        )}
+
         <Menu
           styles={style}
         >

@@ -35,6 +35,7 @@ class Sidebar extends Component {
                   {this.state.showingPlaces.map(place => (
                     <li
                      className='list-item'
+                     tabIndex={0}
                      key={place.id}
                      onClick={() => this.props.showInfoWindow(place)}
                     >{place.name}</li> 
