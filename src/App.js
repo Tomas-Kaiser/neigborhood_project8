@@ -30,8 +30,8 @@ class App extends Component {
     });
    
 
-    if (!this.state.selectedImg.hasOwnProperty)
-    this.fetchData();
+   /*if (!this.state.selectedImg.hasOwnProperty)
+    this.fetchData(); */
   }
   // Closing infowindow func
   closeInfowWindow = () => {
@@ -62,14 +62,14 @@ class App extends Component {
       const searchedForText = this.state.selectedImg;
       const unsplashKey = '461e85d44d4c08f58f37c36959d0207a4753c976252ab45d4c6bcac355d473cf';
 
-      fetch(`https://api.unsplash.com/search/photos?page=1&query=${searchedForText}`, {
+      fetch(`https://api.unsplash.com/search/photos?page=1&per_page=1&query=${searchedForText}`, {
         headers: {Authorization: 'Client-ID ' + unsplashKey}
       }).then(res => res.json())
       .then(this.addImage)
       .catch(err => {console.log('Error happened during fetching', err)
       })      
     }
-
+  
     addImage = (data) => {
       this.setState({
           imgs: data.results[0].urls,
