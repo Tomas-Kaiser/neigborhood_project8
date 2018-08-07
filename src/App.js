@@ -18,7 +18,7 @@ class App extends Component {
     imgsUserLink: [],
     selectedImg: '',
     hasError: false,
-    errorFetch: ''
+    errMsg: ''
     
   }
   
@@ -33,7 +33,7 @@ class App extends Component {
   closeInfowWindow = () => {
     this.setState({
       infoWindow: '',
-      selectedImg: ''
+      selectedImg: 'null',
     });
   }
 
@@ -62,8 +62,8 @@ class App extends Component {
         headers: {Authorization: 'Client-ID ' + unsplashKey}
       }).then(res => res.json())
       .then(this.addImage)
-      .catch(err => {console.log('Error happened during fetching', err)
-      })      
+      .catch(this.errText)
+         
     }
   
     addImage = (data) => {
@@ -73,6 +73,11 @@ class App extends Component {
           imgsUserLink: data.results[0].user.links.html
         });
       //console.log('Success!');    
+    }
+
+    errText = (err) => {
+      console.log('This is error: ', err)
+      this.setState({ errMsg: 'Somethhing happen. Please, reload the page' })
     }
 
     // If an error
@@ -102,7 +107,7 @@ class App extends Component {
             imgs={this.state.imgs}
             imgsUser={this.state.imgsUser}
             imgsUserLink={this.state.imgsUserLink}
-            errorFetch={this.state.errorFetch}
+            errMsg={this.state.errMsg}
           />
         )}
         {this.state.hasError && (

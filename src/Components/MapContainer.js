@@ -14,6 +14,7 @@ class MapContainer extends Component {
         imgs={this.props.imgs}
         imgsUser={this.props.imgsUser}
         imgsUserLink={this.props.imgsUserLink}
+        errMsg={this.props.errMsg}
         googleMapURL={
           'https://maps.googleapis.com/maps/api/js?key=AIzaSyAuj6bXV7GuDq9oGXfVGRDxS_6nLBSNkvo'
         }

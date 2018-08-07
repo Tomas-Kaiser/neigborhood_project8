@@ -16,9 +16,11 @@ class PlaceMarker extends Component {
           key={this.props.place.id}
           onCloseClick={this.props.closeInfowWindow}
         >
+
+
          <React.Fragment>
             <h1>{this.props.place.name}</h1>
-            <img className='images' src={this.props.img.small} alt={this.props.place.name} />
+           {this.props.errMsg ? this.props.errMsg : <img className='images' src={this.props.img.small} alt={this.props.place.name} /> }
             <figcaption>Photo by <a href={this.props.imgsUserLink} target='_blank'>{this.props.imgsUser.name}</a> / <a href='https://unsplash.com/'>Unsplash</a></figcaption>
          </React.Fragment>
         </InfoWindow>
