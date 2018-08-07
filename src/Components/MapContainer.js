@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import Map from './Map';
 
-class MapContainer extends Component {
-  render() {
+function MapContainer(props) {
     return (
       <Map
-        zoom={this.props.zoom}
-        inatialCenter={this.props.inatialCenter}
-        places={this.props.places}
-        infoWindow={this.props.infoWindow}
-        showInfoWindow={this.props.showInfoWindow}
-        closeInfowWindow={this.props.closeInfowWindow}
-        imgs={this.props.imgs}
-        imgsUser={this.props.imgsUser}
-        imgsUserLink={this.props.imgsUserLink}
-        errMsg={this.props.errMsg}
+        zoom={props.zoom}
+        inatialCenter={props.inatialCenter}
+        places={props.places}
+        infoWindow={props.infoWindow}
+        showInfoWindow={props.showInfoWindow}
+        closeInfowWindow={props.closeInfowWindow}
+        imgs={props.imgs}
+        imgsUser={props.imgsUser}
+        imgsUserLink={props.imgsUserLink}
+        errMsg={props.errMsg}
         googleMapURL={
           'https://maps.googleapis.com/maps/api/js?key=AIzaSyAuj6bXV7GuDq9oGXfVGRDxS_6nLBSNkvo'
         }
@@ -34,6 +33,5 @@ class MapContainer extends Component {
       />
     );
   }
-}
 
 export default MapContainer;
