@@ -14,7 +14,7 @@ class Sidebar extends Component {
          const queryNorm = query.toLowerCase()
          
          return (
-            placeNorm.indexOf(queryNorm) !== -1 && placeNorm.startsWith(queryNorm)
+            placeNorm.indexOf(queryNorm) >= 0
          );
       });
       this.setState({ showingPlaces });

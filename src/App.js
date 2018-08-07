@@ -33,7 +33,7 @@ class App extends Component {
   closeInfowWindow = () => {
     this.setState({
       infoWindow: '',
-      selectedImg: 'null',
+      selectedImg: null,
     });
   }
 
@@ -77,7 +77,7 @@ class App extends Component {
 
     errText = (err) => {
       console.log('This is error: ', err)
-      this.setState({ errMsg: 'Somethhing happen. Please, reload the page' })
+      this.setState({ errMsg: 'Somethhing happen. Please, reload the page.' })
     }
 
     // If an error
