@@ -1,6 +1,8 @@
 ## Neigborhood map / project 8 by udacity
 This project is part of the Front-End Web Developer Nanodegree Program by Udacity. It is a single page map application made with React and the Google Maps API.
 
+This project is deployed on Heroku: https://neigbrohood-map-react.herokuapp.com/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
 The map and its components were rendered using [react-google-maps](https://tomchentw.github.io/react-google-maps/).
@@ -26,3 +28,5 @@ Builds the app for production to the build folder. It correctly bundles React in
 The build is minified and the filenames include the hashes.
 
 The service worker is only enabled in the production environment, e.g. the output of `npm run build`.
+
+Also, Google API key is needed for strat running the project. Create `.env` and write `REACT_APP_API_KEY="YOUR_API_KEY"`
