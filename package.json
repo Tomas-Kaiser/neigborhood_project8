@@ -2,6 +2,10 @@
   "name": "neigborhood",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "6.10.3",
+    "node": "10.16.2"
+  },
   "homepage": "https://Tomas-Kaiser.github.io/Neigborhood-MAP-reactJS-FEND-UDACITY",
   "dependencies": {
     "escape-string-regexp": "^1.0.5",
