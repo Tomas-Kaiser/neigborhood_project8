@@ -6,7 +6,6 @@ import places from './places.js';
 import { slide as Menu } from 'react-burger-menu'
 
 
-
 class App extends Component {
   state = {
     places,
