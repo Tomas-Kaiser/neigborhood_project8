@@ -50,8 +50,10 @@ class App extends Component {
   }
 
   // Fethich data from Unsplas API
-  componentDidUpdate = () => {
-    this.fetchData()
+  componentDidUpdate = (prevProps, prevState) => {
+    if (this.state.imgs === prevState.imgs) {
+      this.fetchData()
+    }
   }
 
     fetchData = () => {
@@ -60,7 +62,8 @@ class App extends Component {
 
       fetch(`https://api.unsplash.com/search/photos?page=1&per_page=1&query=${searchedForText}`, {
         headers: {Authorization: 'Client-ID ' + unsplashKey}
-      }).then(res => res.json())
+      })
+      .then(res => res.json())
       .then(this.addImage)
       .catch(this.errText)
          

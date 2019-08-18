@@ -2,6 +2,7 @@
   "name": "neigborhood",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Tomas-Kaiser.github.io/Neigborhood-MAP-reactJS-FEND-UDACITY",
   "dependencies": {
     "escape-string-regexp": "^1.0.5",
     "react": "^16.4.1",
@@ -13,9 +14,14 @@
     "sort-by": "^1.2.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
   }
 }
