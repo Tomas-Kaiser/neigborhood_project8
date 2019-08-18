@@ -15,7 +15,7 @@ function MapContainer(props) {
         imgsUserLink={props.imgsUserLink}
         errMsg={props.errMsg}
         googleMapURL={
-          'https://maps.googleapis.com/maps/api/js?key=AIzaSyAuj6bXV7GuDq9oGXfVGRDxS_6nLBSNkvo'
+          `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_KEY}`
         }
         loadingElement={<div style={{ height: '100%' }} />}
         containerElement={
